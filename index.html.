@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Evolution Security | Seguridad y Tecnología</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#020810;
+    color:white;
+    line-height:1.5;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+header{
+    background:#02070d;
+    border-bottom:1px solid #102033;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-symbol{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:2px solid #00bfff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#00c8ff;
+    font-size:24px;
+    box-shadow:0 0 15px #0077ff55;
+}
+
+.brand-text strong{
+    display:block;
+    font-size:23px;
+    letter-spacing:1px;
+    color:#12bfff;
+}
+
+.brand-text small{
+    color:#b9c5d1;
+    font-size:10px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00bfff;
+}
+
+.btn{
+    display:inline-block;
+    background:linear-gradient(90deg,#007bff,#00bfff);
+    padding:13px 22px;
+    border-radius:5px;
+    font-weight:bold;
+    box-shadow:0 0 18px #008cff40;
+}
+
+.btn-outline{
+    display:inline-block;
+    padding:12px 22px;
+    border:1px solid #9ba8b6;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:570px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 75% 45%,#0a3355 0%,transparent 28%),
+      linear-gradient(90deg,#02080f 0%,#061523 60%,#07101a 100%);
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width:330px;
+    height:330px;
+    right:8%;
+    border-radius:50%;
+    border:3px solid #0a6fb5;
+    opacity:.15;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:70px 25px;
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.02;
+    max-width:600px;
+    margin-bottom:20px;
+}
+
+.blue{
+    color:#00aaff;
+}
+
+.hero p{
+    max-width:590px;
+    color:#bdc9d5;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+/* BENEFITS */
+
+.benefits{
+    max-width:1200px;
+    margin:-35px auto 35px;
+    position:relative;
+    z-index:5;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background:#061323;
+    border:1px solid #12304b;
+}
+
+.benefit{
+    padding:24px;
+    text-align:center;
+    border-right:1px solid #18314a;
+}
+
+.benefit:last-child{
+    border-right:none;
+}
+
+.icon{
+    color:#00aaff;
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+/* GENERAL */
+
+section{
+    padding:65px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.line{
+    width:65px;
+    height:3px;
+    margin:0 auto 35px;
+    background:#00aaff;
+}
+
+/* SERVICES */
+
+.services{
+    background:#061323;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.card{
+    min-height:230px;
+    padding:30px 22px;
+    background:linear-gradient(145deg,#06111d,#081827);
+    border:1px solid #17344d;
+    border-radius:6px;
+    text-align:center;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#008cff;
+}
+
+.card-icon{
+    font-size:45px;
+    color:#008cff;
+    margin-bottom:16px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#aab8c6;
+    font-size:14px;
+}
+
+/* WHY */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.why-item{
+    text-align:center;
+    padding:20px 12px;
+    border-right:1px solid #163149;
+}
+
+.why-item:last-child{
+    border:none;
+}
+
+.why-item span{
+    font-size:38px;
+    color:#008cff;
+}
+
+.why-item h4{
+    margin:12px 0 8px;
+}
+
+.why-item p{
+    font-size:13px;
+    color:#aab7c3;
+}
+
+/* PROJECTS */
+
+.projects{
+    background:#040c15;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.project{
+    border:1px solid #18344d;
+    border-radius:6px;
+    overflow:hidden;
+    background:#061321;
+}
+
+.project-image{
+    height:190px;
+    background:
+      linear-gradient(135deg,#09233a,#0d4169);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+}
+
+.project-info{
+    padding:18px;
+    text-align:center;
+}
+
+.project-info h3{
+    margin-bottom:6px;
+}
+
+.project-info p{
+    color:#9eafbf;
+    font-size:13px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:
+    radial-gradient(circle at center,#07315a 0%,#03111e 50%,#02070c 100%);
+    text-align:center;
+}
+
+.contact p{
+    color:#a9d9ff;
+    margin-bottom:25px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    max-width:950px;
+    margin:30px auto;
+    gap:20px;
+}
+
+.contact-item{
+    padding:15px;
+}
+
+.contact-item strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.contact-item span{
+    color:#b8c5d0;
+    font-size:14px;
+}
+
+.whatsapp{
+    display:block;
+    max-width:750px;
+    margin:20px auto 0;
+    padding:15px;
+    border-radius:5px;
+    background:#15c84b;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    padding:25px;
+    text-align:center;
+    color:#728293;
+    background:#010408;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero-content{
+        text-align:center;
+        padding:60px 22px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .benefits{
+        margin:0;
+        grid-template-columns:1fr;
+    }
+
+    .benefit{
+        border-right:none;
+        border-bottom:1px solid #18314a;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-item{
+        border-right:none;
+        border-bottom:1px solid #163149;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .brand-text strong{
+        font-size:20px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+
+    <div class="brand">
+        <div class="logo-symbol">◉</div>
+
+        <div class="brand-text">
+            <strong>EVOLUTION</strong>
+            <small>Smart Security. Connected Future.</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#servicios">SERVICIOS</a>
+        <a href="#proyectos">PROYECTOS</a>
+        <a href="#nosotros">NOSOTROS</a>
+        <a href="#contacto">CONTACTO</a>
+
+        <a class="btn"
+        href="https://wa.me/18291234567">
+        COTIZAR AHORA
+        </a>
+    </nav>
+
+</div>
+</header>
+
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<h1>
+PROTEGEMOS<br>
+LO QUE MÁS<br>
+<span class="blue">IMPORTA</span>
+</h1>
+
+<p>
+Soluciones profesionales de videovigilancia,
+cámaras IP, CCTV, redes, Starlink y seguridad
+electrónica para hogares, negocios y empresas.
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn"
+href="https://wa.me/18291234567">
+💬 COTIZAR POR WHATSAPP
+</a>
+
+<a class="btn-outline" href="#servicios">
+VER SERVICIOS
+</a>
+
+</div>
+
+</div>
+</section>
+
+
+<div class="benefits">
+
+<div class="benefit">
+<div class="icon">🛠</div>
+<strong>INSTALACIÓN PROFESIONAL</strong>
+</div>
+
+<div class="benefit">
+<div class="icon">🛡</div>
+<strong>EQUIPOS DE CALIDAD</strong>
+</div>
+
+<div class="benefit">
+<div class="icon">⚙</div>
+<strong>SOPORTE TÉCNICO</strong>
+</div>
+
+</div>
+
+
+<section class="services" id="servicios">
+
+<div class="container">
+
+<h2 class="section-title">NUESTROS SERVICIOS</h2>
+<div class="line"></div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">📹</div>
+<h3>CÁMARAS DE SEGURIDAD</h3>
+<p>
+Instalación de sistemas CCTV e IP para hogares,
+negocios y empresas.
+</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🌐</div>
+<h3>CÁMARAS IP</h3>
+<p>
+Sistemas de alta definición, acceso remoto
+y monitoreo desde el celular.
+</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🎥</div>
+<h3>CCTV ANALÓGICO</h3>
+<p>
+Actualización e instalación de sistemas
+analógicos y XVR.
+</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🔌</div>
+<h3>REDES Y CABLEADO</h3>
+<p>
+Instalación de cableado estructurado,
+redes y equipos de comunicación.
+</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">📡</div>
+<h3>STARLINK</h3>
+<p>
+Instalación y configuración de sistemas
+Starlink para conectividad a Internet.
+</p>
+</div>
+
+
+<div class="card">
+<div class="card-icon">⚙️</div>
+<h3>MANTENIMIENTO Y SOPORTE</h3>
+<p>
+Diagnóstico, mantenimiento y reparación
+de sistemas de seguridad.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="nosotros">
+
+<div class="container">
+
+<h2 class="section-title">
+¿POR QUÉ ELEGIR <span class="blue">EVOLUTION SECURITY?</span>
+</h2>
+
+<div class="line"></div>
+
+<div class="why-grid">
+
+<div class="why-item">
+<span>🛡</span>
+<h4>INSTALACIÓN PROFESIONAL</h4>
+<p>
+Trabajamos buscando que la instalación
+quede limpia, organizada y segura.
+</p>
+</div>
+
+<div class="why-item">
+<span>✓</span>
+<h4>EQUIPOS DE CALIDAD</h4>
+<p>
+Utilizamos equipos adecuados
+para cada proyecto.
+</p>
+</div>
+
+<div class="why-item">
+<span>♙</span>
+<h4>SOLUCIONES PERSONALIZADAS</h4>
+<p>
+Cada instalación se diseña según
+las necesidades del cliente.
+</p>
+</div>
+
+<div class="why-item">
+<span>🎧</span>
+<h4>SOPORTE TÉCNICO</h4>
+<p>
+Te ayudamos después de la instalación
+para cualquier necesidad.
+</p>
+</div>
+
+<div class="why-item">
+<span>$</span>
+<h4>PRESUPUESTOS CLAROS</h4>
+<p>
+Cotizaciones detalladas y transparentes
+sin costos ocultos.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="projects" id="proyectos">
+
+<div class="container">
+
+<h2 class="section-title">PROYECTOS REALIZADOS</h2>
+<div class="line"></div>
+
+<div class="project-grid">
+
+<div class="project">
+<div class="project-image">📹</div>
+<div class="project-info">
+<h3>INSTALACIÓN RESIDENCIAL</h3>
+<p>Cámaras exteriores + DVR</p>
+</div>
+</div>
+
+<div class="project">
+<div class="project-image">🏢</div>
+<div class="project-info">
+<h3>SISTEMA PARA NEGOCIO</h3>
+<p>8 cámaras + grabación + acceso remoto</p>
+</div>
+</div>
+
+<div class="project">
+<div class="project-image">🖥️</div>
+<div class="project-info">
+<h3>PROYECTO EMPRESARIAL</h3>
+<p>Cámaras IP + red + almacenamiento</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="contact" id="contacto">
+
+<div class="container">
+
+<h2>
+¿NECESITAS PROTEGER TU HOGAR O NEGOCIO?
+</h2>
+
+<p>Solicita tu cotización hoy mismo.</p>
+
+<div class="contact-grid">
+
+<div class="contact-item">
+<strong>WHATSAPP</strong>
+<span>829-123-4567</span>
+</div>
+
+<div class="contact-item">
+<strong>TELÉFONO</strong>
+<span>829-123-4567</span>
+</div>
+
+<div class="contact-item">
+<strong>CORREO</strong>
+<span>info@evolutionsecurity.com</span>
+</div>
+
+<div class="contact-item">
+<strong>UBICACIÓN</strong>
+<span>República Dominicana</span>
+</div>
+
+</div>
+
+<a class="whatsapp"
+href="https://wa.me/18291234567">
+💬 HABLAR POR WHATSAPP
+</a>
+
+</div>
+</section>
+
+
+<footer>
+© 2026 Evolution Security · Smart Security. Connected Future.
+</footer>
+
+</body>
+</html>
