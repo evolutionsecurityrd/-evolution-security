@@ -55,17 +55,31 @@ header{
     gap:10px;
 }
 
-.logo-symbol{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    border:2px solid #00bfff;
+.logo.evo-logo{
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#00c8ff;
-    font-size:24px;
-    box-shadow:0 0 15px #0077ff55;
+    color:#00bfff;
+    filter:drop-shadow(0 0 6px #008cff);
+}
+
+.evo-logo .camera{
+    width:46px;
+    height:46px;
+    border:3px solid #00bfff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    color:#29d5ff;
+}
+
+.evo-logo .wing{
+    font-size:28px;
+    color:#00aaff;
+    font-weight:bold;
+}
 }
 
 .brand-text strong{
@@ -484,14 +498,20 @@ footer{
 <header>
 <div class="nav">
 
-    <div class="brand">
-        <div class="logo-symbol">◉</div>
+    <<div class="brand">
 
-        <div class="brand-text">
-            <strong>EVOLUTION</strong>
-            <small>Smart Security. Connected Future.</small>
-        </div>
+    <div class="evo-logo">
+        <span class="wing">≪</span>
+        <span class="camera">◉</span>
+        <span class="wing">≫</span>
     </div>
+
+    <div class="brand-text">
+        <strong>EVOLUTION</strong>
+        <small>Smart Security. Connected Future.</small>
+    </div>
+
+</div>
 
     <nav>
         <a href="#inicio">INICIO</a>
